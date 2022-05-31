@@ -1,7 +1,7 @@
 import './App.css';
-import Error from './Error.js';
+import Error from './components/Error.js';
 import { Routes, Route } from 'react-router-dom';
-import Home from './home_components/Home.js';
+import Home from './components/home/Home.js';
 
 document.title = "Musely - Music You Love";
 
