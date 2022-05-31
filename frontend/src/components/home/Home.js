@@ -1,9 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar.js';
 import Button from '@mui/material/Button';
+import Top_Artists from "./Top_Artists";
 import Authorize from "../Authorize"
-
-document.body.style = 'background: #E6FFFF;';
 
 const Home = ({code}) => {
     const accessToken = Authorize(code)
@@ -14,6 +13,7 @@ const Home = ({code}) => {
         <Button variant="contained">
             Testing
         </Button>
+        <Top_Artists/>
         </div>
 
     );
