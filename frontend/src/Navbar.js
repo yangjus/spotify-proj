@@ -11,13 +11,13 @@ const Navbar = () => {
     const linkStyle = {
         margin: "1rem",
         textDecoration: "none",
-        color: 'white'
+        color: 'black'
     };
 
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar style={{backgroundColor: "#FFA778"}}>
                     <Typography variant="h6" component="div">
                         Musely Website
                     </Typography>
