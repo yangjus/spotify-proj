@@ -19,7 +19,7 @@ export default function BasicGrid() {
     return (
         <Box sx={{ display: "flex", justifyContent: 'center', p:1, m:1 }}>
             <Grid container spacing={2}>
-                    {tempList.map(element => <Grid item xs={2}><ArtistListing/></Grid>)}
+                    {tempList.map(element => <Grid item xs={props.numCols}><ArtistListing/></Grid>)}
 
 
             </Grid>

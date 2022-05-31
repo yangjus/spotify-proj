@@ -17,7 +17,7 @@ const Home = ({code}) => {
                 <Grid item xs={6} style={{background:'white', border:'2px solid #FFA778', borderRadius: '8px'}}>
                     <Typography variant="h3">Top Artists</Typography>
                     <br></br>
-                    <Top_Artists/>
+                    <Top_Artists numCols = {4}/>
                 </Grid>
                 <Grid item xs={6} style={{background:'white', border:'2px solid #FFA778', borderRadius: '8px'}}>
                     <Typography variant="h3">Top Songs</Typography>
