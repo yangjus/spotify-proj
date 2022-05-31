@@ -5,7 +5,7 @@ import Home from './components/home/Home.js';
 import Login from './components/login/Login.js';
 
 document.title = "Musely - Music You Love";
-
+const code = new URLSearchParams(window.location.seach).get('code');
 function App() {
   return (
     <div className="App">
