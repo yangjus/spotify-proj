@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import {AppBar, Box, Toolbar, Typography, Button, IconButton, Grid} from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Navbar = () => {
 
@@ -33,6 +30,12 @@ const Navbar = () => {
                     <Link to="/home" style={linkStyle}>
                         <Button color="inherit">Forum</Button>
                     </Link>
+                    <Typography style={{color: "black"}}>
+                            _username_
+                    </Typography>
+                    <IconButton>
+                        <AccountCircleIcon/>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </Box>
