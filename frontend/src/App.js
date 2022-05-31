@@ -5,6 +5,7 @@ import Home from './components/home/Home.js';
 import Login from './components/login/Login.js';
 
 document.title = "Musely - Music You Love";
+document.body.style = 'background: #E6FFFF;';
 
 function App() {
   return (
