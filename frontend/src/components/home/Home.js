@@ -9,10 +9,8 @@ const Home = ({code}) => {
     return (
         <div><div>{code}</div>
         <Navbar />
-        <h1>Hello</h1>
-        <Button variant="contained">
-            Testing
-        </Button>
+        <h1>Musely</h1>
+        <h3>Top Charts</h3>
         <Top_Artists/>
         </div>
 
