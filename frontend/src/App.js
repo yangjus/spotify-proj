@@ -2,8 +2,7 @@ import './App.css';
 import Error from './components/Error.js';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home.js';
-import "bootstrap/dist/css/bootstrap.min.css"
-import Login from './components/login/Login.js'
+import Login from './components/login/Login.js';
 
 document.title = "Musely - Music You Love";
 
