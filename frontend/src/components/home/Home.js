@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar.js';
 import Button from '@mui/material/Button';
+import Top_Artists from "./Top_Artists";
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
         <Button variant="contained">
             Testing
         </Button>
+        <Top_Artists/>
         </div>
 
     );
