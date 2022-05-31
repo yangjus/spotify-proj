@@ -1,9 +1,9 @@
 import './App.css';
-import Error from './Error.js';
+import Error from './components/Error.js';
 import { Routes, Route } from 'react-router-dom';
-import Home from './home_components/Home.js';
+import Home from './components/home/Home.js';
 import "bootstrap/dist/css/bootstrap.min.css"
-import Login from './Login'
+import Login from './components/login/Login.js'
 
 document.title = "Musely - Music You Love";
 
