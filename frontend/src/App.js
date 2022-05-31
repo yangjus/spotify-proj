@@ -8,6 +8,7 @@ import ArtistListing from "./components/home/song_and_artists_components/artistL
 
 document.title = "Musely - Music You Love";
 document.body.style = 'background: #E6FFFF;';
+const code = new URLSearchParams(window.location.seach).get('code');
 
 function App() {
   return (
