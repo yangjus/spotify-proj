@@ -6,8 +6,15 @@ const { collection, getDoc, query, where, getDocs, doc, updateDoc, addDoc, delet
 
 // returns all existing users
 router.get('/', async (req, res, next) => {
+  const users = {};
   try {
-
+    getDocs(collection(db, 'users'))
+      .then((docs) => {
+        const userList = [];
+        docs.forEach((doc) => userList.push({...doc.data()}));
+        users.users = userList;
+        return res.status(200).json(users);
+      })
   } catch (error) {
     return res.status(500).send(error);
   }
