@@ -4,6 +4,15 @@ var router = express.Router();
 const db = require('./firebase.js');
 const { collection, getDoc, query, where, getDocs, doc, updateDoc, addDoc, deleteDoc } = require('firebase/firestore');
 
+// returns all existing users
+router.get('/', async (req, res, next) => {
+  try {
+
+  } catch (error) {
+    return res.status(500).send(error);
+  }
+});
+
 // accepts either doc id (userID) or spotifyID as query
 router.get('/user', async (req, res, next) => {
   try {
