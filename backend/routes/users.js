@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const db = require('./firebase.js');
-const { collection, getDoc, query, where, getDocs, doc, updateDoc } = require('firebase/firestore');
+const { collection, getDoc, query, where, getDocs, doc, updateDoc, addDoc } = require('firebase/firestore');
 
 // accepts either doc (user) id or spotifyID as argument
 router.get('/user', async (req, res, next) => {
@@ -30,6 +30,15 @@ router.put('/user', async (req, res, next) => {
     await updateDoc(userRef, userPref);
 
     return res.status(201).json({message: 'success'});
+  } catch (error) {
+    return res.status(500).send(error);
+  }
+});
+
+router.post('/user', async (req, res, next) => {
+  try {
+    const docRef = await addDoc(collection(db, 'users'), req.body); 
+    return res.status(201).json({message: `user added with id ${docRef.id}`});
   } catch (error) {
     return res.status(500).send(error);
   }
