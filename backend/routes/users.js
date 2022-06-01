@@ -18,30 +18,19 @@ router.get('/user', async (req, res, next) => {
     }
     return res.status(200).json({...user.data()})
   } catch (error) {
-    console.log(error);
     return res.status(500).send(error);
   }
 });
 
 router.put('/user', async (req, res, next) => {
   try {
-    console.log(req.body);
-    // TODO: set new user options
-    const userPref = {};
-    req.body.username ? userPref.username = req.body.username : null;
-    req.body.bio ? userPref.bio = req.body.bio : null;
-    req.body.profileImage ? userPref.profileImage = req.body.profileImage : null;
-    req.body.public ? userPref.public = req.body.public : null;
-    req.body.displayArtists ? userPref.public = req.body.public : null;
-    req.body.displaySongs ? userPref.displaySongs = req.body.displaySongs : null;
-    console.log(userPref);
-
+    // copy everything except the userID
+    const {userID, ...userPref} = req.body;
     const userRef = doc(db, 'users', req.body.userID);
     await updateDoc(userRef, userPref);
 
     return res.status(201).json({message: 'success'});
   } catch (error) {
-    console.log(error);
     return res.status(500).send(error);
   }
 });
