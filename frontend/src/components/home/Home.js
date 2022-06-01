@@ -9,9 +9,9 @@ const Home = ({code}) => {
     return (
         <div>
         {/*<div>{code}</div>*/}
-        <Navbar />
+        <Navbar ispage={[true, false, false, false]}/>
         <h1>Musely</h1>
-        <h3>Top Charts</h3>
+        <h2>Top Charts</h2>
         <div style={{padding: 20}}>
             <Grid container justify="center">
                 <Grid item xs={6} style={{background:'white', border:'2px solid #FFA778', borderRadius: '8px'}}>

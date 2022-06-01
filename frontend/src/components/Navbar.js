@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {AppBar, Box, Toolbar, Typography, Button, Menu, MenuItem} from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -20,6 +20,8 @@ const Navbar = () => {
         color: 'black'
     };
 
+    const [isPage, setPage] = useState(props.ispage);
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -28,16 +30,16 @@ const Navbar = () => {
                         Musely Website
                     </Typography>
                     <Link to="/home" style={linkStyle}>
-                        <Button color="inherit">Home</Button>
+                        <Button color="inherit" style={{backgroundColor: isPage[0] ? '#FF7D61 ' : "#FFA778"}}>Home</Button>
                     </Link>
                     <Link to="/home" style={linkStyle}>
-                        <Button color="inherit">Liked Songs</Button>
+                        <Button color="inherit" style={{backgroundColor: isPage[1] ? '#FF7D61 ' : "#FFA778"}}>Liked Songs</Button>
                     </Link>
                     <Link to="/home" style={linkStyle}>
-                        <Button color="inherit">Discover Users</Button>
+                        <Button color="inherit" style={{backgroundColor: isPage[2] ? '#FF7D61 ' : "#FFA778"}}>Discover Users</Button>
                     </Link>
                     <Link to="/home" style={linkStyle}>
-                        <Button color="inherit">Forum</Button>
+                        <Button color="inherit" style={{backgroundColor: isPage[3] ? '#FF7D61 ' : "#FFA778"}}>Forum</Button>
                     </Link>
                     <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} 
                         aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick} 
