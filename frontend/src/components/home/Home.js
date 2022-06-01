@@ -23,7 +23,6 @@ const Home = ({code}) => {
                 <Grid item xs = {0.10} />
                 <Grid item xs={5.95} style={{background:'white', border:'2px solid #FFA778', borderRadius: '8px'}}>
                     <Typography variant="h3">Top Songs</Typography>
-                    <br/>
                     <TopSongs/>
 
                 </Grid>

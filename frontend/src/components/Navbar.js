@@ -38,7 +38,7 @@ const Navbar = (props) => {
                     <Link to="/home" style={linkStyle}>
                         <Button color="inherit" style={{backgroundColor: isPage[2] ? '#FF7D61 ' : "#FFA778"}}>Discover Users</Button>
                     </Link>
-                    <Link to="/home" style={linkStyle}>
+                    <Link to="/forum" style={linkStyle}>
                         <Button color="inherit" style={{backgroundColor: isPage[3] ? '#FF7D61 ' : "#FFA778"}}>Forum</Button>
                     </Link>
                     <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} 
