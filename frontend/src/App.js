@@ -2,7 +2,7 @@ import './App.css';
 import Error from './components/Error.js';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home.js';
-import Login from './components/login/Login.js'
+import Authorize from './components/authorization'
 import Forum from './components/forum/Forum.js';
 
 document.title = "Musely - Music You Love";
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
     <Routes>
-      <Route path="/" element={<Login />}/>
+      <Route path="/" element={<Authorize />}/>
       <Route path="/home" element={<Home />}/>
       <Route path="/forum" element={<Forum />}/>
       <Route path="*" element={<Error />}/>

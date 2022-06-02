@@ -3,7 +3,9 @@ import Navbar from '../Navbar.js';
 import {Grid, Typography, Box} from '@mui/material';
 import TopArtists from "./Top_Artists";
 import TopSongs from "./Top_Songs";
-import Authorize from "../Authorize"
+import Authorize from "../authorization"
+import Button from '@mui/material/Button';
+import Top_Artists from "./Top_Artists";
 
 const Home = ({code}) => {
     const accessToken = Authorize(code)
