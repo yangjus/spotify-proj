@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 const Users = props => {
 	return (
 		<>
-			<Navbar />
+			<Navbar ispage={[false, false, true, false]} />
 			<Outlet />
 		</>
 	);
