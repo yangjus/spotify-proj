@@ -63,9 +63,8 @@ const Navbar = (props) => {
                             <Menu id="basic-menu" anchorEl={anchorEl} open={open}
                                   onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button',}}>
                                 <MenuItem onClick={handleClose}>My Profile</MenuItem>
-                                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                                <MenuItem component={Link} to="/">Logout</MenuItem>
                             </Menu>
-
                         </Grid>
                     </Grid>
                     </Toolbar>
