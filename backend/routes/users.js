@@ -4,6 +4,22 @@ var router = express.Router();
 const db = require('./firebase.js');
 const { collection, getDoc, query, where, getDocs, doc, updateDoc, addDoc, deleteDoc } = require('firebase/firestore');
 
+// returns all existing users
+router.get('/', async (req, res, next) => {
+  const users = {};
+  try {
+    getDocs(collection(db, 'users'))
+      .then((docs) => {
+        const userList = [];
+        docs.forEach((doc) => userList.push({...doc.data(), userID: doc.id}));
+        users.users = userList;
+        return res.status(200).json(users);
+      })
+  } catch (error) {
+    return res.status(500).send(error);
+  }
+});
+
 // accepts either doc id (userID) or spotifyID as query
 router.get('/user', async (req, res, next) => {
   try {
@@ -15,7 +31,7 @@ router.get('/user', async (req, res, next) => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => user = doc); // should only be one user
     }
-    return res.status(200).json({...user.data()})
+    return res.status(200).json({...user.data(), userID: user.id})
   } catch (error) {
     return res.status(500).send(error);
   }
