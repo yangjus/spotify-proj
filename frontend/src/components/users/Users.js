@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Box, Card, Button, Grid, Typography, CardContent, Avatar, CardActions, IconButton } from '@mui/material';
 import MessageIcon from '@mui/icons-material/Message';
+import Navbar from '../Navbar.js';
 
 const Users = props => {
 	const [users, setUsers] = useState();
@@ -13,6 +14,7 @@ const Users = props => {
 
 	return (
 		<>
+			<Navbar />
 			<Typography variant="h3">Users</Typography>
 			<Box sx={{ flexGrow: 1, m: 2 }} >
 				<Grid container spacing={2} alignItems="center">

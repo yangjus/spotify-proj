@@ -33,7 +33,7 @@ const Navbar = () => {
                     <Link to="/home" style={linkStyle}>
                         <Button color="inherit">Liked Songs</Button>
                     </Link>
-                    <Link to="/home" style={linkStyle}>
+                    <Link to="/users" style={linkStyle}>
                         <Button color="inherit">Discover Users</Button>
                     </Link>
                     <Link to="/home" style={linkStyle}>
