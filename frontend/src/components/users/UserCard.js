@@ -22,6 +22,7 @@ const UserCard = props => {
 								component={Link} 
 								to={props.userID}
 								size="small" 
+								color="warning"
 								sx={{ ml: .5 }}
 							>
 								View Profile
