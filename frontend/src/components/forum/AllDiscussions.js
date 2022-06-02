@@ -9,7 +9,6 @@ const AllDiscussions = (props) => {
     return (
         <>
         {props.allPosts && props.allPosts.map((post) => {
-            console.log(post.id);
             key_increment = key_increment + 1;
             let date = epoch_date;
             let seconds = post.dateCreated.seconds - 14400;
@@ -23,7 +22,8 @@ const AllDiscussions = (props) => {
                         border:'2px solid #FFA778',
                         borderRadius: 2, fontSize: '1rem', fontWeight: '700'}}>
                         <Typography>[{post.byUser}] posted at [{date.toLocaleTimeString()}]: {post.forumName}</Typography>
-                        <Link to={`/forum/${post.id}`} state={{postId: post.id}}>  
+                        <Link to={`/forum/${post.id}`} state={{postId: post.id, postUser: post.byUser, 
+                            postTitle: post.forumName}} style={{textDecoration: "none"}}>  
                             <Button variant="contained">View Post</Button>
                         </Link>
                     </Box>

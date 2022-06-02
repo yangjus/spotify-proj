@@ -4,7 +4,7 @@ const db = require("./firebase")
 const {getDocs, addDoc, setDoc, collection, serverTimestamp, doc} = require("firebase/firestore")
 
 router.get("/info/:id", async (req, res, next) => {
-  console.log(req.params.id)  // shows the path params (stuff after /info/)
+  console.log("discussion id:", req.params.id)  // shows the path params (stuff after /info/)
   let messages = [];
   // const docs = await getDocs(doc(db, "forums", req.params.id));
   const docRef = await getDocs(collection(db, `forums/${req.params.id}/messages`));
@@ -13,10 +13,10 @@ router.get("/info/:id", async (req, res, next) => {
   res.json({result: messages})
 })
 
-router.post("/post", async (req, res, next) => {
+router.post("/post/:id", async (req, res, next) => {
   let request = req.body;
   request["timeSent"] = serverTimestamp();
-  await addDoc(collection(db, "responses"), request);
+  await addDoc(collection(db, `forums/${req.params.id}/messages`), request);
   console.log(request)
   res.send(request)
 })

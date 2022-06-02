@@ -12,7 +12,7 @@ router.get("/info", async (req, res, next) => {
 })
 
 router.get("/info/:id", async (req, res, next) => {
-  console.log(req.params)  // shows the path params (stuff after /info/)
+  //console.log(req.params)  // shows the path params (stuff after /info/)
   res.sendStatus(200)  // say OK without sending data back
 })
 
