@@ -18,7 +18,8 @@ export default function SongListing(props) {
             <Item>
             {/* album pic, song, artists, album*/}
                 <Stack direction="row" spacing={2}>
-                    <Item>Album Cover</Item>
+                    {/*<Item>Album Cover</Item>*/}
+                    <img src = "https://upload.wikimedia.org/wikipedia/en/a/ad/Gangnam_Style_Official_Cover.png" alt = "album cover" width={64} height={64}/>
                     <h2>Song Title</h2>
                     <h2>Artist</h2>
                     <h2>Album</h2>

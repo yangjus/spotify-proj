@@ -15,11 +15,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const tempList = [1,2,3,4,5,6,7,8,9,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 
-export default function BasicGrid() {
+export default function TopArtists(props) {
     return (
         <Box sx={{ display: "flex", justifyContent: 'center', p:1, m:1 }}>
             <Grid container spacing={2}>
-                    {tempList.map(element => <Grid item xs={2}><ArtistListing/></Grid>)}
+                    {tempList.slice(0, 12).map(element => <Grid item xs={props.numCols}><ArtistListing/></Grid>)}
 
 
             </Grid>
