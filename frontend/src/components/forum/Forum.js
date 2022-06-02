@@ -9,6 +9,7 @@ const Forum = () => {
     const [allPosts, setAllPosts] = useState();
     const [content, setContent] = useState();
     const [user, setUser] = useState();
+    document.title = 'Forum Board';
 
     useEffect(() => {
         fetch("http://localhost:9000/forum/info?parameters=3")

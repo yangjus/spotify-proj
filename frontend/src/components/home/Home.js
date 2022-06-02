@@ -9,6 +9,7 @@ import Top_Artists from "./Top_Artists";
 import DisplayPlaylists from "../playlist/DisplayPlaylists"
 const Home = ({code}) => {
     const accessToken = Authorize(code)
+    document.title = "Musely - Music You Love"
     return (
         <div>
         {/*<div>{code}</div>*/}
