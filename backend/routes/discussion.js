@@ -1,25 +1,22 @@
 const express = require("express")
 const router = express.Router()
 const db = require("./firebase")
-const {getDocs, addDoc, setDoc, collection, serverTimestamp} = require("firebase/firestore")
+const {getDocs, addDoc, setDoc, collection, serverTimestamp, doc} = require("firebase/firestore")
 
-router.get("/info", async (req, res, next) => {
+router.get("/info/:id", async (req, res, next) => {
+  console.log("discussion id:", req.params.id)  // shows the path params (stuff after /info/)
   let messages = [];
-  console.log(req.query)
-  const docs = await getDocs(collection(db, "responses"))
-  docs.forEach((doc) => (console.log(doc.data()), messages.push(doc.data())))
+  // const docs = await getDocs(doc(db, "forums", req.params.id));
+  const docRef = await getDocs(collection(db, `forums/${req.params.id}/messages`));
+
+  docRef.forEach((doc) => (console.log(doc.data()), messages.push(doc.data())))
   res.json({result: messages})
 })
 
-router.get("/info/:id", async (req, res, next) => {
-  console.log(req.params)  // shows the path params (stuff after /info/)
-  res.sendStatus(200)  // say OK without sending data back
-})
-
-router.post("/post", async (req, res, next) => {
+router.post("/post/:id", async (req, res, next) => {
   let request = req.body;
   request["timeSent"] = serverTimestamp();
-  await addDoc(collection(db, "responses"), request);
+  await addDoc(collection(db, `forums/${req.params.id}/messages`), request);
   console.log(request)
   res.send(request)
 })

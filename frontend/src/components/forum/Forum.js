@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import Navbar from "../Navbar.js";
 import axios from "axios";
-import {Grid, Box} from "@mui/material";
 import AllDiscussions from "./AllDiscussions.js";
-
+import Discussion from "./Discussion.js";
+import { Routes, Route } from 'react-router-dom';
 
 const Forum = () => {
     const [allPosts, setAllPosts] = useState();
@@ -44,6 +44,9 @@ const Forum = () => {
         <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
             <AllDiscussions allPosts={allPosts} />
         </div>
+        <Routes>
+            <Route path=":id" element={<Discussion />} />
+        </Routes>
         </>
     );
 };

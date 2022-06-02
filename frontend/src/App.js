@@ -22,7 +22,7 @@ function App() {
         <Route path="" element={<UserList />} />
         <Route path=":userID" element={<User />}/>
       </Route>
-      <Route path="/forum" element={<Forum />}/>
+      <Route path="/forum/*" element={<Forum />}/>
       <Route path="*" element={<Error />}/>
     </Routes>
     </div>

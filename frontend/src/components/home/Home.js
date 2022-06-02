@@ -6,7 +6,7 @@ import TopSongs from "./Top_Songs";
 import Authorize from "../authorization"
 import Button from '@mui/material/Button';
 import Top_Artists from "./Top_Artists";
-
+import DisplayPlaylists from "../playlist/DisplayPlaylists"
 const Home = ({code}) => {
     const accessToken = Authorize(code)
     return (
@@ -30,6 +30,8 @@ const Home = ({code}) => {
                 </Grid>
             </Grid>
         </div>
+
+        <DisplayPlaylists />
         </div>
 
     );

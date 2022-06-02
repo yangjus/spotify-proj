@@ -1,24 +1,36 @@
 import React, {useEffect, useState} from "react";
-import Navbar from "../Navbar.js";
 import axios from "axios";
 import MessageBoard from "./MessageBoard.js";
-import {Grid, Box} from "@mui/material";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Discussion = () => {
     const [allMessages, setAllMessages] = useState();
     const [content, setContent] = useState();
     const [user, setUser] = useState();
+    const location = useLocation();
+    const { postId, postUser, postTitle } = location.state || {};
+    let changeParam = window.location.pathname;
+    console.log(changeParam);
+    const url = window.location.href;
+    let navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:9000/discussion/info?parameters=3")
+        fetch("http://localhost:9000/discussion/info/" + postId)
         .then((res) => res.json())
         .then((text) => setAllMessages(text.result))
         .catch((err) => console.log(err))
-    }, [])
+    }, [changeParam]);
+
+    const refreshPage = () => {
+        fetch("http://localhost:9000/discussion/info/" + postId)
+        .then((res) => res.json())
+        .then((text) => setAllMessages(text.result))
+        .catch((err) => console.log(err))
+    }
 
     const handleSubmit = () => {
-        axios.post("http://localhost:9000/discussion/post", {
+        axios.post("http://localhost:9000/discussion/post/" + postId, {
           user: user,
           message: content
         })
@@ -26,12 +38,15 @@ const Discussion = () => {
           console.log(res.data);
         })
         .catch((err) => console.log(err))
+        console.log(postId);
+        return navigate("/forum/");
     }
 
     return (
         <>
-        <Navbar ispage={[false, false, false, true]}/>
         <h2>Discussion History</h2>
+        <h3>Posted by: {postUser}</h3>
+        <h3>Post Title: {postTitle}</h3>
         <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
             <MessageBoard allMessages={allMessages} />
         </div>

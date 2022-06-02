@@ -1,13 +1,10 @@
 import React from "react";
 import {Button, Typography, Box} from '@mui/material';
+import { Link } from "react-router-dom";
 
 const AllDiscussions = (props) => {
     let key_increment = 0;
     let epoch_date = new Date(1970, 0, 1);
-
-    const viewPost = () => {
-        console.log('')
-    };
 
     return (
         <>
@@ -25,7 +22,10 @@ const AllDiscussions = (props) => {
                         border:'2px solid #FFA778',
                         borderRadius: 2, fontSize: '1rem', fontWeight: '700'}}>
                         <Typography>[{post.byUser}] posted at [{date.toLocaleTimeString()}]: {post.forumName}</Typography>
-                        <Button variant="contained" onClick={viewPost}>View Post</Button>
+                        <Link to={`/forum/${post.id}`} state={{postId: post.id, postUser: post.byUser, 
+                            postTitle: post.forumName}} style={{textDecoration: "none"}}>  
+                            <Button variant="contained">View Post</Button>
+                        </Link>
                     </Box>
                 </div>
             )
