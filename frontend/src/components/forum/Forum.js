@@ -3,7 +3,7 @@ import Navbar from "../Navbar.js";
 import axios from "axios";
 import {Grid, Box} from "@mui/material";
 import AllDiscussions from "./AllDiscussions.js";
-
+import Inbox from "../inbox_ui/inbox";
 
 const Forum = () => {
     const [allPosts, setAllPosts] = useState();
@@ -30,21 +30,24 @@ const Forum = () => {
 
     return (
         <>
-        <Navbar ispage={[false, false, false, true]}/>
-        <h1>Forum Board</h1>
-        <form onSubmit={handleSubmit}>
-        <label>Username: </label>
-            <input type="text" id="username" name="username" onChange={(e) => {setUser(e.target.value)}}></input>
-            <br></br>
-            <label>Post Title: </label>
-            <input type="text" id="post" name="post" onChange={(e) => {setContent(e.target.value)}}></input>
-            <br></br>
-            <input type="submit" />
-        </form>
-        <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
-            <AllDiscussions allPosts={allPosts} />
-        </div>
+            <Inbox/>
+        {/*<Navbar ispage={[false, false, false, true]}/>*/}
+        {/*<h1>Forum Board</h1>*/}
+        {/*<form onSubmit={handleSubmit}>*/}
+        {/*<label>Username: </label>*/}
+        {/*    <input type="text" id="username" name="username" onChange={(e) => {setUser(e.target.value)}}></input>*/}
+        {/*    <br></br>*/}
+        {/*    <label>Post Title: </label>*/}
+        {/*    <input type="text" id="post" name="post" onChange={(e) => {setContent(e.target.value)}}></input>*/}
+        {/*    <br></br>*/}
+        {/*    <input type="submit" />*/}
+        {/*</form>*/}
+        {/*<div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>*/}
+        {/*    <AllDiscussions allPosts={allPosts} />*/}
+        {/*</div>*/}
+
         </>
+
     );
 };
 
