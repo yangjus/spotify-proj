@@ -7,6 +7,7 @@ import SongListing from "./components/home/song_and_artists_components/songListi
 import ArtistListing from "./components/home/song_and_artists_components/artistListing"
 import User from './components/users/User.js';
 import Users from './components/users/Users.js';
+import UserList from './components/users/UserList.js';
 
 document.title = "Musely - Music You Love";
 document.body.style = 'background: #E6FFFF;';
@@ -19,6 +20,7 @@ function App() {
       <Route path="/" element={<Login />}/>
       <Route path="/home" element={<Home />}/>
       <Route path="/users" element={<Users />}>
+        <Route path="" element={<UserList />} />
         <Route path=":userID" element={<User />}/>
       </Route>
       <Route path="*" element={<Error />}/>
