@@ -5,9 +5,9 @@ const axios = require('axios');
 // requires auth key
 router.get('/me', async (req, res, next) => {
 	try {
-		if (!req.body.AUTH_KEY)
+		if (!req.query.AUTH_KEY)
 			throw 'AUTH_KEY required to make Spotify API request';
-		const AUTH_KEY = req.body.AUTH_KEY;
+		const AUTH_KEY = req.query.AUTH_KEY;
 
 		const TOP_SONGS_ENDPOINT = 'https://api.spotify.com/v1/me/top/tracks';
 		await axios.get(TOP_SONGS_ENDPOINT, {
@@ -15,8 +15,9 @@ router.get('/me', async (req, res, next) => {
 				Authorization: `Bearer ${AUTH_KEY}`
 			}
 		})
-			.then((res) => res.status(200).json(res))
-			.catch((error) => res.status(500).send(error));
+			.then((response) => res.status(200).json(response.data))
+			.catch((error) => {
+				res.status(500).send(error)});
 	} catch (error) {
 		res.status(500).send(error);
 	}
