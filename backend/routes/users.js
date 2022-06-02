@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
     getDocs(collection(db, 'users'))
       .then((docs) => {
         const userList = [];
-        docs.forEach((doc) => userList.push({...doc.data()}));
+        docs.forEach((doc) => userList.push({...doc.data(), userID: doc.id}));
         users.users = userList;
         return res.status(200).json(users);
       })
@@ -31,7 +31,7 @@ router.get('/user', async (req, res, next) => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => user = doc); // should only be one user
     }
-    return res.status(200).json({...user.data()})
+    return res.status(200).json({...user.data(), userID: user.id})
   } catch (error) {
     return res.status(500).send(error);
   }
