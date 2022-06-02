@@ -21,7 +21,7 @@ const User = props => {
 				setUser(res.data)
 				document.title = res.data.public ? `${res.data.username}'s profile` : `Private profile`;
 			});
-	}, []);
+	}, [params]);
 
 	let userInfo;
 	if (user) {
@@ -33,7 +33,7 @@ const User = props => {
 						<Typography variant="h3" sx={{ textAlign: "left" }}>
 							{user.username}
 						</Typography>
-						<Typography secondary variant="h5" sx={{ textAlign: "left", color: "rgba(0, 0, 0, 0.6)" }}>
+						<Typography variant="h5" sx={{ textAlign: "left", color: "rgba(0, 0, 0, 0.6)" }}>
 							{user.bio}
 						</Typography>
 					</Box>
