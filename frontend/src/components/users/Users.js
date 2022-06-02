@@ -13,6 +13,7 @@ const Users = props => {
 
 	return (
 		<>
+			<Typography variant="h3">Users</Typography>
 			<Box sx={{ flexGrow: 1, m: 2 }} >
 				<Grid container spacing={2} alignItems="center">
 					{users ? users.map(user => <UserCard {...user} key={user.spotifyID} />) : null}
