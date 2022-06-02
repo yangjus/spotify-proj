@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar.js';
 import Button from '@mui/material/Button';
-import Authorize from "../Authorize"
+import Authorize from "../authorization"
 
 document.body.style = 'background: #E6FFFF;';
 
