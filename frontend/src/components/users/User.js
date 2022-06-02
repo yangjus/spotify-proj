@@ -13,6 +13,8 @@ const style = {
 
 const User = props => {
 	const [user, setUser] = useState();
+	const [tracks, setTracks] = useState();
+	const [artists, getArtists] = useState();
 	let params = useParams();
 
 	useEffect(() => {
@@ -21,6 +23,13 @@ const User = props => {
 				setUser(res.data)
 				document.title = res.data.public ? `${res.data.username}'s profile` : `Private profile`;
 			});
+		/*
+		axios.get('/songs/me', { params: { AUTH_KEY: localStorage("authorizationToken")}})
+			.then((res) => {
+
+			})
+			*/
+
 	}, [params]);
 
 	let userInfo;
