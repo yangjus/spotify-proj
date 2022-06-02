@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {AppBar, Box, Toolbar, Typography, Button, Menu, MenuItem} from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Grid from '@mui/material/Grid';
+import UserName from "../components/username/GetUserName"
 
 const Navbar = (props) => {
 
@@ -56,7 +57,7 @@ const Navbar = (props) => {
                             <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined}
                                     aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}
                                     style={{color: "black", position: "relative"}}>
-                                _username_
+                                <UserName />
                                 <AccountCircleIcon/>
                             </Button>
 

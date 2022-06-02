@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 //https://developer.spotify.com/console/get-current-user-playlists/
-const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/playlists";
+const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me";
 
-const DisplayPlaylists = () => {
+const GetUserName = () => {
   const [token, setToken] = useState("");
   const [data, setData] = useState({}); //data from Spotify. default empty object state
 
@@ -14,8 +14,7 @@ const DisplayPlaylists = () => {
     }
   }, []);
 
-  const handleGetPlaylists = () => {
-
+  const handleGetUsername = () => {
     axios
       .get(PLAYLISTS_ENDPOINT, { //initalize get request
         headers: { //custom object
@@ -31,8 +30,8 @@ const DisplayPlaylists = () => {
   };
 
   return (
-    <><button onClick={handleGetPlaylists}>Get Playlist Names</button>{data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}</>
+   <><button onClick={handleGetUsername}>Get UserNames</button>{data['display_name']}</>
   );
 };
 
-export default DisplayPlaylists;
+export default GetUserName;
