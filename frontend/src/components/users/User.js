@@ -17,7 +17,10 @@ const User = props => {
 
 	useEffect(() => {
 		axios.get('/users/user', { params : {...params} })
-			.then((res) => setUser(res.data));
+			.then((res) => {
+				setUser(res.data)
+				document.title = res.data.public ? `${res.data.username}'s profile` : `Private profile`;
+			});
 	}, []);
 
 	let userInfo;
@@ -92,8 +95,8 @@ const User = props => {
 		}
 		else {
 			userInfo = 
-			 	<Paper sx={{ m: 2 }} >
-					<Typography variant="h3" sx={{ mt: 2 }} >
+			 	<Paper sx={{ m: 2, pt: 1 }}>
+					<Typography variant="h3">
 						How'd you get here!?
 					</Typography>
 					<Typography variant="h5" sx={{ color: "rgba(0, 0, 0, 0.6)" }}>
@@ -104,7 +107,7 @@ const User = props => {
 						to=".."
 						variant="contained"
 						color="warning"
-						sx= {{ m: 2 }}
+						sx= {{ mb: 2, mt: 1 }}
 					>
 						Back to User Directory
 					</Button>

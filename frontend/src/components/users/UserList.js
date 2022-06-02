@@ -5,6 +5,7 @@ import UserCard from './UserCard.js';
 
 const UserList = props => {
 	const [users, setUsers] = useState();
+	document.title = 'Discover Users';
 
 	useEffect(() => {
 		axios.get('/users')
