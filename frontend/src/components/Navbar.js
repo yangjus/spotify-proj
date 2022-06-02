@@ -42,7 +42,7 @@ const Navbar = (props) => {
                             <Link to="/home" style={linkStyle}>
                                 <Button style={{backgroundColor: isPage[1] ? '#FF7D61 ' : "#FFA778"}} color="inherit">Liked Songs</Button>
                             </Link>
-                            <Link to="/home" style={linkStyle}>
+                            <Link to="/users" style={linkStyle}>
                                 <Button style={{backgroundColor: isPage[2] ? '#FF7D61 ' : "#FFA778"}} color="inherit">Discover Users</Button>
                             </Link>
 
