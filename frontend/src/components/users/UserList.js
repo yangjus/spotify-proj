@@ -14,7 +14,7 @@ const UserList = props => {
 
 	return (
 		<>
-			<Typography variant="h3">Users</Typography>
+			<Typography variant="h3" sx={{ mt: 2 }}>Users</Typography>
 			<Box sx={{ flexGrow: 1, m: 2 }} >
 				<Grid container spacing={2} alignItems="center">
 					{users ? users.filter(user => user.public).map(user => 
