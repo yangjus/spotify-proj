@@ -1,17 +1,15 @@
 import React from "react";
 import {Button, Typography, Box} from '@mui/material';
+import { Link } from "react-router-dom";
 
 const AllDiscussions = (props) => {
     let key_increment = 0;
     let epoch_date = new Date(1970, 0, 1);
 
-    const viewPost = () => {
-        console.log('')
-    };
-
     return (
         <>
         {props.allPosts && props.allPosts.map((post) => {
+            console.log(post.id);
             key_increment = key_increment + 1;
             let date = epoch_date;
             let seconds = post.dateCreated.seconds - 14400;
@@ -25,7 +23,9 @@ const AllDiscussions = (props) => {
                         border:'2px solid #FFA778',
                         borderRadius: 2, fontSize: '1rem', fontWeight: '700'}}>
                         <Typography>[{post.byUser}] posted at [{date.toLocaleTimeString()}]: {post.forumName}</Typography>
-                        <Button variant="contained" onClick={viewPost}>View Post</Button>
+                        <Link to={`/forum/${post.id}`} state={{postId: post.id}}>  
+                            <Button variant="contained">View Post</Button>
+                        </Link>
                     </Box>
                 </div>
             )

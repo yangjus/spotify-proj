@@ -15,7 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Authorize />}/>
       <Route path="/home" element={<Home />}/>
-      <Route path="/forum" element={<Forum />}/>
+      <Route path="/forum/*" element={<Forum />}/>
       <Route path="*" element={<Error />}/>
     </Routes>
     </div>

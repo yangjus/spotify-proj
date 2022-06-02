@@ -9,7 +9,7 @@ const MessageBoard = (props) => {
         {props.allMessages && props.allMessages.map((message) => {
             key_increment = key_increment + 1;
             let date = epoch_date;
-            let seconds = message.dateCreated.seconds - 14400;
+            let seconds = message.timeSent.seconds - 14400;
             date.setSeconds(seconds);
             return (
                 <div key={key_increment}>
@@ -19,7 +19,7 @@ const MessageBoard = (props) => {
                         border: '1px solid',
                         border:'2px solid #FFA778',
                         borderRadius: 2, fontSize: '1rem', fontWeight: '700'}}>
-                        <Typography>[{message.user}] posted at [{date.toLocaleTimeString()}]: {message.content}</Typography>
+                        <Typography>[{message.user}] posted at [{date.toLocaleTimeString()}]: {message.message}</Typography>
                     </Box>
                 </div>
             )

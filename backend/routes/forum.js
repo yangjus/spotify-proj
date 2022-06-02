@@ -7,7 +7,7 @@ router.get("/info", async (req, res, next) => {
   let messages = [];
   console.log(req.query)
   const docs = await getDocs(collection(db, "forums"))
-  docs.forEach((doc) => (console.log(doc.data()), messages.push(doc.data())))
+  docs.forEach((doc) => (console.log(doc.data(), doc.id), messages.push({...doc.data(), id: doc.id})))
   res.json({result: messages})
 })
 
