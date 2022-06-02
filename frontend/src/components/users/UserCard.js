@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import MessageIcon from '@mui/icons-material/Message';
 
 const UserCard = props => {
-	const goToUserPage = event => {
-		window.open()
-	};
-
 	return (
 		<>
 		 	<Grid item xs={4}>
