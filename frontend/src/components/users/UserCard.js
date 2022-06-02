@@ -20,7 +20,7 @@ const UserCard = props => {
 						<CardActions sx={{ mt: -3 }}>
 							<Button
 								component={Link} 
-								to={props.spotifyID}
+								to={props.userID}
 								size="small" 
 								sx={{ ml: .5 }}
 							>
