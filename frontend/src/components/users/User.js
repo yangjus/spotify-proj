@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Paper, Avatar, Box, Typography, Button } from '@mui/material';
+import { Paper, Avatar, Box, Typography, Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const style = {
 	display: 'flex',
 	flexWrap: 'wrap',
-	m: 2
+	m: 2,
+	p: 2
 };
 
 const User = props => {
@@ -33,12 +34,61 @@ const User = props => {
 							{user.bio}
 						</Typography>
 					</Box>
-				</Box>
+				</Box>;
+			
+			let userArtists;
+			if (user.displayArtists) {
+				userArtists =
+					<>
+						<Typography variant="h5">Top Artists</Typography>
+
+					</>
+			}
+			else {
+				userArtists =
+					<>
+						<Typography variant="h5">Top Artists</Typography>
+						<Typography variant="h6" sx={{ textAlign: "left" }}>
+							{user.username} doesn't want to share their top artists :(
+						</Typography>
+					</>
+			}
+
+			let userSongs;
+			if (user.displaySongs) {
+				userSongs =
+					<>
+						<Typography variant="h5">Top Songs</Typography>						
+					</>
+			}
+			else {
+				userSongs =
+					<>
+						<Typography variant="h5">Top Songs</Typography>						
+						<Typography variant="h6" sx={{ textAlign: "left" }}>
+							{user.username} doesn't want to share their top songs :(
+						</Typography>
+					</>
+			}
 
 			userInfo =
-				<Paper sx={style}>
-					{userDesc}
-				</Paper>
+			 	<>
+					<Paper sx={style}>
+						{userDesc}
+					</Paper>
+					<Grid container spacing={2}>
+						<Grid item xs={6}>
+							<Paper sx={{ ...style, mr: 0, mt: 0 }}>
+								{userArtists}
+							</Paper>
+						</Grid>
+						<Grid item xs={6}>
+							<Paper sx={{ ...style, ml: 0, mt: 0 }}>
+								{userSongs}
+							</Paper>
+						</Grid>
+					</Grid>
+				</>;
 		}
 		else {
 			userInfo = 
