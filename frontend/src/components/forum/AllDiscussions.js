@@ -6,7 +6,7 @@ const AllDiscussions = (props) => {
     let epoch_date = new Date(1970, 0, 1);
 
     const viewPost = () => {
-        console.log();
+        console.log('')
     };
 
     return (
