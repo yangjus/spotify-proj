@@ -7,6 +7,7 @@ import Authorize from "../authorization"
 import Button from '@mui/material/Button';
 import Top_Artists from "./Top_Artists";
 import DisplayPlaylists from "../playlist/DisplayPlaylists"
+import GetUserName from '../username/GetUserName';
 const Home = ({code}) => {
     const accessToken = Authorize(code)
     document.title = "Musely - Music You Love"
@@ -33,6 +34,7 @@ const Home = ({code}) => {
         </div>
 
         <DisplayPlaylists />
+        <GetUserName />
         </div>
 
     );
