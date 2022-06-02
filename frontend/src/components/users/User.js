@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Paper, Avatar, Box, Typography } from '@mui/material';
+import { Paper, Avatar, Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const style = {
 	display: 'flex',
@@ -34,27 +35,39 @@ const User = props => {
 					</Box>
 				</Box>
 
-			userInfo = userDesc;
+			userInfo =
+				<Paper sx={style}>
+					{userDesc}
+				</Paper>
 		}
 		else {
 			userInfo = 
-				<Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-					<Typography variant="h3" style={{ textAlign: "center" }} >
+			 	<Paper sx={{ m: 2 }} >
+					<Typography variant="h3" sx={{ mt: 2 }} >
 						How'd you get here!?
 					</Typography>
 					<Typography variant="h5" sx={{ color: "rgba(0, 0, 0, 0.6)" }}>
 						This user's profile is set to private.
 					</Typography>
-				</Box>
+					<Button
+						component={Link}	
+						to=".."
+						variant="contained"
+						color="warning"
+						sx= {{ m: 2 }}
+					>
+						Back to User Directory
+					</Button>
+				</Paper>
 		}
 	}
 
 	return (
 		<>
 			{user ? // show if user data ready
-			<Paper sx={style}>
+			<>
 				{userInfo}
-			</Paper>
+			</>
 			: null}
 		</>
 	);
