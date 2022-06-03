@@ -29,12 +29,12 @@ const Navbar = (props) => {
             <AppBar position="static">
                 <Toolbar style={{backgroundColor: "#FFA778"}}>
                     <Grid container spacing={2}>
-                        <Grid container item xs = {1.5} alignItems = "center">
+                        <Grid container item xs = {1} alignItems = "center">
                             <Typography variant="h5" component="div"  >
-                                Musely Website
+                                &nbsp;&nbsp;&nbsp;Musely
                             </Typography>
                         </Grid>
-                        <Grid container item xs={9.5} justifyContent="flex-start">
+                        <Grid container item xs={9} justifyContent="flex-start">
 
 
                             <Link to="/home" style={linkStyle}>
@@ -53,7 +53,7 @@ const Navbar = (props) => {
 
                         </Grid>
 
-                        <Grid container item xs={1}>
+                        <Grid container item xs={2}>
                             <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined}
                                     aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}
                                     style={{color: "black", position: "relative"}}>
