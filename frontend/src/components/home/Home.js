@@ -20,17 +20,17 @@ const Home = ({code}) => {
         <br></br>
         <img src={nameTitle} alt="Musely"/>
         <br></br>
-        <h2>Top Charts</h2>
+        <h1>Top Charts</h1>
         <div style={{padding: 20}}>
             <Grid container justify="center">
                 <Grid item xs={5.95} justify="center" align="center" style={{background:'white', border:'2px solid #FFA778', borderRadius: '8px'}}>
-                    <Typography variant="h3">Top Artists</Typography>
+                    <Typography variant="h4">Top Artists</Typography>
                     <br/>
                     <TopArtists numCols = {3}/>
                 </Grid>
                 <Grid item xs = {0.10} />
                 <Grid item xs={5.95} style={{background:'white', border:'2px solid #FFA778', borderRadius: '8px'}}>
-                    <Typography variant="h3">Top Songs</Typography>
+                    <Typography variant="h4">Top Songs</Typography>
                     <TopSongs/>
 
                 </Grid>
