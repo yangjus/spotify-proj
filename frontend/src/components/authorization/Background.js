@@ -6,7 +6,7 @@ import BTS from './images/bts.png';
 import NBAYoungBoy from './images/nbayoungboy.png'
 import Shakira from './images/shakira.png'
 import Authorize from './Authorize';
-
+import nameTitle from './images/name.png';
 //background styling
 const Section = styled.section`
   height: 100vh;
@@ -35,10 +35,9 @@ const ColumnLeft = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 5rem 2rem;
+  padding: 5rem 9rem;
 
   h1 {
-    margin-bottom: 0.5rem;
     font-size: 2rem;
   }
 
@@ -111,7 +110,7 @@ const Background = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            Musely
+          <img src={nameTitle} alt="Musely"/>
           </motion.h1>
           <motion.p
             variants={fadeLeft}
@@ -119,21 +118,21 @@ const Background = () => {
             animate='visible'
             transition={{ duration: 1 }}
           >
-            muzic u luv 🤪 
           </motion.p>
-          <Button
+          {/* <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{
               scale: 0.95,
               backgroundColor: '#67F6E7',
               border: 'none',
               color: '#000'
+              
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1.5 } }}
-          >
+          > */}
             <Authorize />
-          </Button>
+          {/* </Button> */}
         </ColumnLeft>
         <ColumnRight>
           <Image
