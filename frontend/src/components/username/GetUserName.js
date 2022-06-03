@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -8,30 +9,33 @@ const GetUserName = () => {
   const [token, setToken] = useState("");
   const [data, setData] = useState({}); //data from Spotify. default empty object state
 
+
   useEffect(() => {
+  const handleGetUsername = () => {
+      axios
+          .get(PLAYLISTS_ENDPOINT, { //initalize get request
+              headers: { //custom object
+                  Authorization: "Bearer " + token,
+              },
+          })
+          .then((response) => {
+              setData(response.data);
+          })
+          .catch((error) => {
+              console.log(error);
+          });
+  };
     if (localStorage.getItem("accessToken")) {
       setToken(localStorage.getItem("accessToken"));
     }
-  }, []);
-
-  const handleGetUsername = () => {
-    axios
-      .get(PLAYLISTS_ENDPOINT, { //initalize get request
-        headers: { //custom object
-          Authorization: "Bearer " + token,
-        },
-      })
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+    handleGetUsername();
+  }
+  , [setData, token]);
 
   return (
-   <><button onClick={handleGetUsername}>Get UserNames</button>{data['display_name']}</>
+      <>{data&&data['display_name']}</>
   );
 };
 
 export default GetUserName;
+
