@@ -12,6 +12,7 @@ const GetUserName = () => {
     if (localStorage.getItem("accessToken")) {
       setToken(localStorage.getItem("accessToken"));
     }
+    handleGetUsername();
   }, []);
 
   const handleGetUsername = () => {
@@ -30,7 +31,7 @@ const GetUserName = () => {
   };
 
   return (
-   <><button onClick={handleGetUsername}>Get UserNames</button>{data['display_name']}</>
+   <>{data['display_name']}</>
   );
 };
 
