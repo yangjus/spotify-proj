@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import MessageBoard from "./MessageBoard.js";
 import { useLocation, useNavigate } from 'react-router-dom';
+import {TextField, Button, Divider} from '@mui/material';
 
 
 const Discussion = () => {
@@ -10,6 +11,7 @@ const Discussion = () => {
     const [user, setUser] = useState();
     const location = useLocation();
     const { postId, postUser, postTitle } = location.state || {};
+    document.title = 'Post - ' + postTitle;
     let changeParam = window.location.pathname;
     console.log(changeParam);
     const url = window.location.href;
@@ -44,21 +46,18 @@ const Discussion = () => {
 
     return (
         <>
+        <Divider/>
         <h2>Discussion History</h2>
-        <h3>Posted by: {postUser}</h3>
-        <h3>Post Title: {postTitle}</h3>
+        <h5>Posted by: {postUser} | Post Title: {postTitle}</h5>
         <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
             <MessageBoard allMessages={allMessages} />
         </div>
         <form onSubmit={handleSubmit}>
-        <label>Username: </label>
-            <input type="text" id="username" name="username" onChange={(e) => {setUser(e.target.value)}}></input>
-            <br></br>
-            <label>Message: </label>
-            <input type="text" id="message" name="message" onChange={(e) => {setContent(e.target.value)}}></input>
-            <br></br>
-            <input type="submit" />
+            <TextField label="Username" onChange={(e) => {setUser(e.target.value)}}></TextField>
+            <TextField label="Message Content" onChange={(e) => {setContent(e.target.value)}}></TextField>
+            <Button variant="contained" onClick={handleSubmit}> Submit Message </Button>
         </form>
+        <br></br>
         </>
     );
 };

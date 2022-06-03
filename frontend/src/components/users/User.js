@@ -22,7 +22,7 @@ const User = props => {
 		axios.get('/users/user', { params : {...params} })
 			.then((res) => {
 				setUser(res.data)
-				document.title = res.data.public ? `${res.data.username}'s profile` : `Private profile`;
+				document.title = res.data.public ? `${res.data.username}'s Profile` : `Private Profile`;
 			});
 		axios.get('/songs/me', { params: { AUTH_KEY: localStorage.getItem("accessToken")}})
 			.then((res) => {
