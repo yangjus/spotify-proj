@@ -7,7 +7,7 @@ import Users from './components/users/Users.js';
 import UserList from './components/users/UserList.js';
 import Authorize from './components/authorization'
 import Forum from './components/forum/Forum.js';
-import LikedSongs from './component/song_data/Track.js';
+import LikedSongs from './components/song_data/LikedSongs.js';
 
 document.title = "Musely - Music You Love";
 document.body.style = 'background: #E6FFFF;';
