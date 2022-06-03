@@ -12,10 +12,10 @@ const GetUserName = () => {
     if (localStorage.getItem("accessToken")) {
       setToken(localStorage.getItem("accessToken"));
     }
-    handleGetUsername();
+    getUsername();
   }, []);
 
-  const handleGetUsername = () => {
+  const getUsername = () => {
     axios
       .get(PLAYLISTS_ENDPOINT, { //initalize get request
         headers: { //custom object
