@@ -7,6 +7,7 @@ import Users from './components/users/Users.js';
 import UserList from './components/users/UserList.js';
 import Authorize from './components/authorization'
 import Forum from './components/forum/Forum.js';
+import LikedSongs from './component/song_data/Track.js';
 
 document.title = "Musely - Music You Love";
 document.body.style = 'background: #E6FFFF;';
@@ -22,6 +23,7 @@ function App() {
         <Route path="" element={<UserList />} />
         <Route path=":userID" element={<User />}/>
       </Route>
+      <Route path="/liked" element={<LikedSongs />}/>
       <Route path="/forum/*" element={<Forum />}/>
       <Route path="*" element={<Error />}/>
     </Routes>
