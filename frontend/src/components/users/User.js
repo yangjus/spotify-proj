@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Paper, Avatar, Box, Typography, Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Track from '../song_data/Track.js';
 
 const style = {
 	display: 'flex',
@@ -23,12 +24,10 @@ const User = props => {
 				setUser(res.data)
 				document.title = res.data.public ? `${res.data.username}'s Profile` : `Private Profile`;
 			});
-		/*
-		axios.get('/songs/me', { params: { AUTH_KEY: localStorage("authorizationToken")}})
+		axios.get('/songs/me', { params: { AUTH_KEY: localStorage.getItem("accessToken")}})
 			.then((res) => {
-
+				setTracks(res.data.items);
 			})
-			*/
 
 	}, [params]);
 
@@ -71,6 +70,11 @@ const User = props => {
 				userSongs =
 					<>
 						<Typography variant="h5">Top Songs</Typography>						
+						<Box>
+							{tracks ? 
+							tracks.slice(0, 5).map((track) => <Track {...track} key={track.id} />)
+							: null}
+						</Box>
 					</>
 			}
 			else {
