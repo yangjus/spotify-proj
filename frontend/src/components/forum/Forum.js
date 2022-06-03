@@ -4,6 +4,7 @@ import axios from "axios";
 import AllDiscussions from "./AllDiscussions.js";
 import Discussion from "./Discussion.js";
 import { Routes, Route } from 'react-router-dom';
+import {Grid, Divider} from '@mui/material';
 
 const Forum = () => {
     const [allPosts, setAllPosts] = useState();
@@ -33,21 +34,29 @@ const Forum = () => {
         <>
         <Navbar ispage={[false, false, false, true]}/>
         <h1>Forum Board</h1>
-        <form onSubmit={handleSubmit}>
-        <label>Username: </label>
-            <input type="text" id="username" name="username" onChange={(e) => {setUser(e.target.value)}}></input>
-            <br></br>
-            <label>Post Title: </label>
-            <input type="text" id="post" name="post" onChange={(e) => {setContent(e.target.value)}}></input>
-            <br></br>
-            <input type="submit" />
-        </form>
-        <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
-            <AllDiscussions allPosts={allPosts} />
-        </div>
-        <Routes>
-            <Route path=":id" element={<Discussion />} />
-        </Routes>
+        <Grid container spacing={2}>
+            <Grid item xs={6}>
+                <Divider/>
+                <h2>Forum Posts</h2>
+                <form onSubmit={handleSubmit}>
+                <label>Username: </label>
+                    <input type="text" id="username" name="username" onChange={(e) => {setUser(e.target.value)}}></input>
+                    <br></br>
+                    <label>Post Title: </label>
+                    <input type="text" id="post" name="post" onChange={(e) => {setContent(e.target.value)}}></input>
+                    <br></br>
+                    <input type="submit" />
+                </form>
+                <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
+                    <AllDiscussions allPosts={allPosts} />
+                </div>
+            </Grid>
+            <Grid item xs={6}>
+                <Routes>
+                <Route path=":id" element={<Discussion />} />
+                </Routes>
+            </Grid>
+        </Grid>
         </>
     );
 };
