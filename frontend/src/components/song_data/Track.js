@@ -1,4 +1,5 @@
-import { Grid, Paper, Avatar, Typography } from '@mui/material';
+import { Grid, Paper, Avatar, Link } from '@mui/material';
+import { deepOrange } from '@mui/material/colors';
 
 const style = {
 	display: 'flex',
@@ -20,14 +21,20 @@ const Track = props => {
 							sx={{ width: "4em", height: "4em" }}
 						/>
 					</Grid>
-					<Grid item xs={3}>
-						{props.name}
+					<Grid item xs>
+					 	<Link variant="body1" href={props.external_urls.spotify} underline="hover" color={deepOrange[700]}>
+							{props.name}
+						</Link>
 					</Grid>
-					<Grid item xs={3}>
-						{props.artists[0].name}
+					<Grid item xs>
+						<Link variant="body1" href={props.artists[0].external_urls.spotify} underline="hover" color={deepOrange[700]}>
+							{props.artists[0].name}
+						</Link>
 					</Grid>
-					<Grid item xs={3}>
-						{props.album.name}
+					<Grid item xs>
+						<Link variant="body1" href={props.album.external_urls.spotify} underline="hover" color={deepOrange[700]}>
+							{props.album.name}
+						</Link>
 					</Grid>
 				</Grid>
 			</Paper>
