@@ -19,7 +19,7 @@ export default function TopArtists(props) {
     return (
         <Box sx={{ display: "flex", justifyContent: 'center', p:1, m:1 }}>
             <Grid container spacing={2}>
-                    {tempList.slice(0, 12).map(element => <Grid item xs={props.numCols}><ArtistListing/></Grid>)}
+                    {tempList.slice(0, 16).map(element => <Grid item xs={props.numCols}><ArtistListing/></Grid>)}
 
 
             </Grid>
