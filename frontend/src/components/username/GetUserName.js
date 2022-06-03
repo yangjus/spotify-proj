@@ -12,9 +12,10 @@ const GetUserName = () => {
     if (localStorage.getItem("accessToken")) {
       setToken(localStorage.getItem("accessToken"));
     }
+    getUsername();
   }, []);
 
-  const handleGetUsername = () => {
+  const getUsername = () => {
     axios
       .get(PLAYLISTS_ENDPOINT, { //initalize get request
         headers: { //custom object
@@ -30,7 +31,7 @@ const GetUserName = () => {
   };
 
   return (
-   <><button onClick={handleGetUsername}>Get UserNames</button>{data['display_name']}</>
+   <>{data['display_name']}</>
   );
 };
 
