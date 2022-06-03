@@ -46,7 +46,7 @@ const Authorize = () => {
 
   return (
     <div className="container">
-      <Button variant="contained" onClick={handleLogin}>Login to Spotify</Button>
+      <Button variant="contained" onClick={handleLogin}>Login</Button>
     </div>
   );
 };

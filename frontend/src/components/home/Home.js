@@ -36,9 +36,6 @@ const Home = ({code}) => {
                 </Grid>
             </Grid>
         </div>
-
-        <DisplayPlaylists />
-        <GetUserName />
         </div>
 
     );
