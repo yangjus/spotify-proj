@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Authorize.css";
+import {Button} from "@mui/material";
 
 const CLIENT_ID = "c29de5e8ffd74cf1a650a6c73ea05feb";
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
@@ -46,7 +46,7 @@ const Authorize = () => {
 
   return (
     <div className="container">
-      <button onClick={handleLogin}>login to spotify</button>
+      <Button variant="contained" onClick={handleLogin}>Login</Button>
     </div>
   );
 };

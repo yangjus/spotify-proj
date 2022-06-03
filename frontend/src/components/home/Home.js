@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import Top_Artists from "./Top_Artists";
 import DisplayPlaylists from "../playlist/DisplayPlaylists"
 import GetUserName from '../username/GetUserName';
+import nameTitle from './name.png';
+
 const Home = ({code}) => {
     const accessToken = Authorize(code)
     document.title = "Musely - Music You Love"
@@ -15,7 +17,9 @@ const Home = ({code}) => {
         <div>
         {/*<div>{code}</div>*/}
         <Navbar ispage={[true, false, false, false]}/>
-        <h1>Musely</h1>
+        <br></br>
+        <img src={nameTitle} alt="Musely"/>
+        <br></br>
         <h2>Top Charts</h2>
         <div style={{padding: 20}}>
             <Grid container justify="center">
@@ -32,9 +36,6 @@ const Home = ({code}) => {
                 </Grid>
             </Grid>
         </div>
-
-        <DisplayPlaylists />
-        <GetUserName />
         </div>
 
     );
