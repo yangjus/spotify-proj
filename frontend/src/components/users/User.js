@@ -51,40 +51,40 @@ const User = props => {
 			if (user.displayArtists) {
 				userArtists =
 					<>
-						<Typography variant="h5">Top Artists</Typography>
+						<Typography variant="h5" textAlign="left">Top Artists</Typography>
 
 					</>
 			}
 			else {
 				userArtists =
-					<>
-						<Typography variant="h5">Top Artists</Typography>
+					<Grid>
+						<Typography variant="h5" textAlign="left">Top Artists</Typography>
 						<Typography variant="h6" sx={{ textAlign: "left" }}>
 							{user.username} doesn't want to share their top artists :(
 						</Typography>
-					</>
+					</Grid>
 			}
 
 			let userSongs;
 			if (user.displaySongs) {
 				userSongs =
-					<>
-						<Typography variant="h5">Top Songs</Typography>						
+					<Grid>
+						<Typography variant="h5" textAlign="left">Top Songs</Typography>	
 						<Box>
 							{tracks ? 
 							tracks.slice(0, 5).map((track) => <Track {...track} key={track.id} />)
 							: null}
 						</Box>
-					</>
+					</Grid>
 			}
 			else {
 				userSongs =
-					<>
-						<Typography variant="h5">Top Songs</Typography>						
+					<Grid>
+						<Typography variant="h5" textAlign="left">Top Songs</Typography>	
 						<Typography variant="h6" sx={{ textAlign: "left" }}>
 							{user.username} doesn't want to share their top songs :(
 						</Typography>
-					</>
+					</Grid>
 			}
 
 			userInfo =
