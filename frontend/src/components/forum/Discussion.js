@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import MessageBoard from "./MessageBoard.js";
 import { useLocation, useNavigate } from 'react-router-dom';
-import {TextField, Button, Divider} from '@mui/material';
+import {TextField, Button, Divider, Box} from '@mui/material';
 
 
 const Discussion = () => {
@@ -49,14 +49,16 @@ const Discussion = () => {
         <Divider/>
         <h2>Discussion History</h2>
         <h5>Posted by: {postUser} | Post Title: {postTitle}</h5>
+        <form onSubmit={handleSubmit}>
+            <Box textAlign='center' align="center" sx={{width: '25ch'}}>
+                <TextField label="Username" align="center" margin="dense" size="small" width='25ch' onChange={(e) => {setUser(e.target.value)}}></TextField>
+                <TextField label="Message Content" multiline rows={4} margin="dense" size="small" style={{width: '50ch'}} onChange={(e) => {setContent(e.target.value)}}></TextField>
+                <Button variant="contained" width='30%' onClick={handleSubmit}> Submit Message </Button>
+            </Box>
+        </form>
         <div display="flex" justify-content="center" style={{ width: '100%', align: "center"}}>
             <MessageBoard allMessages={allMessages} />
         </div>
-        <form onSubmit={handleSubmit}>
-            <TextField label="Username" onChange={(e) => {setUser(e.target.value)}}></TextField>
-            <TextField label="Message Content" onChange={(e) => {setContent(e.target.value)}}></TextField>
-            <Button variant="contained" onClick={handleSubmit}> Submit Message </Button>
-        </form>
         <br></br>
         </>
     );
