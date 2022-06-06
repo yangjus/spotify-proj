@@ -46,10 +46,10 @@ Distributed under the GNU General Public License v3.0.
 
 ## Contact
 <ul>
-  <li>Justin Yang - @yangjus@umich.edu</li>
-  <li>Glendon Chin - @gjc2df@virginia.edu</li>
-  <li>Edward Chen - @ec7nm@virginia.edu</li> 
-  <li>Julian Donald - @juliand@email.virginia.edu</li> 
+  <li>Justin Yang - <a href="mailto:yangjus@umich.edu">yangjus@umich.edu</a></li>
+  <li>Glendon Chin - <a href="mailto:gjc2df@virginia.edu">gjc2df@virginia.edu</a></li>
+  <li>Edward Chen - <a href="mailto:ec7nm@virginia.edu">ec7nm@virginia.edu</a></li> 
+  <li>Julian Donald - <a href="mailto:juliand@email.virginia.edu">juliand@email.virginia.edu</a></li> 
 </ul>
 Project Link: https://github.com/yangjus/spotify-proj
 
