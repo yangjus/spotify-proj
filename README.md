@@ -3,11 +3,11 @@
 <details open>
 <summary>Table of Contents</summary>
   <br>
-  Project Description
-  Technologies Used
-  Getting Started
-  Contact
-  Acknowledgments
+  1. Project Description
+  2. Technologies Used
+  3. Getting Started
+  4. Contact
+  5. Acknowledgments
 </details>
   
 
