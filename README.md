@@ -2,16 +2,13 @@
 
 <details open>
 <summary>Table of Contents</summary>
-  <br>
-  Project Description
-  <br>
-  Technologies Used
-  <br>
-  Getting Started
-  <br>
-  Contact
-  <br>
-  Acknowledgments
+  <ol>
+    <li>Project Description</li>
+    <li>Technologies Used</li>
+    <li>Getting Started</li>
+    <li>Contact</li>
+    <li>Acknowledgments</li>
+  </ol>
 </details>
   
 
