@@ -48,10 +48,12 @@ Finally, start both the `backend` and `frontend` servers in development mode. Th
 Distributed under the GNU General Public License v3.0.
 
 ## Contact
-Justin Yang - @yangjus@umich.edu
-Glendon Chin - @gjc2df@virginia.edu 
-Edward Chen - @ec7nm@virginia.edu 
-Julian Donald - @juliand@email.virginia.edu 
+<ul>
+  <li>Justin Yang - @yangjus@umich.edu</li>
+  <li>Glendon Chin - @gjc2df@virginia.edu</li>
+  <li>Edward Chen - @ec7nm@virginia.edu</li> 
+  <li>Julian Donald - @juliand@email.virginia.edu</li> 
+</ul>
 Project Link: https://github.com/yangjus/spotify-proj
 
 ## Acknowledgments
