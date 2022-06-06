@@ -1,5 +1,15 @@
 # Musely
 
+<details open>
+  <summary>Project Description</summary>
+  <summary>Technologies Used</summary>
+  <summary>Getting Started</summary>
+  <summary>Contact</summary>
+  <summary>Contact</summary>Acknowledgments</summary>
+  <br>
+</details>
+  
+
 ## Project Description
 The Spotify application does an amazing job of intuitively connecting users to artists across the globe. Building on this structure, our team has developed Musely, an experience that doesn’t just connect people to music but brings music enthusiasts to each other. Utilizing the Spotify API, user Spotify data such as liked songs and artists are used to then build global profiles where each person can then hop onto forums to discuss with those that share similar interests in music. Some features include:
 - Top Liked Songs
