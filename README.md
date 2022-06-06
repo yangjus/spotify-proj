@@ -1,12 +1,13 @@
 # Musely
 
 <details open>
-  <summary>Project Description</summary>
-  <summary>Technologies Used</summary>
-  <summary>Getting Started</summary>
-  <summary>Contact</summary>
-  <summary>Contact</summary>Acknowledgments</summary>
+<summary>Table of Contents</summary>
   <br>
+  Project Description
+  Technologies Used
+  Getting Started
+  Contact
+  Acknowledgments
 </details>
   
 
